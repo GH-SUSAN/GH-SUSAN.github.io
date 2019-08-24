@@ -79,16 +79,35 @@
 
 
 
-<meta name="description" content="You will never fail until you give up!">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Susan-L&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="概述&amp;emsp;&amp;emsp;我们前边几章学习的基本上都属于机器学习算法范畴，本章将就两个机器学习应用实例来进行学习：异常检测和推荐系统。&amp;emsp;&amp;emsp;二者都是机器学习的典型应用，让我们开始吧！ 课程大纲  课程内容异常检测什么是异常检测&amp;emsp;&amp;emsp;异常检测是机器学习算法的一个常见应用。这种算法的一个有趣之处在于：它虽然主要用于非监督学习问题，但从某些角度看，它又类似于一些监督">
+<meta property="og:type" content="article">
+<meta property="og:title" content="夜的第九页">
+<meta property="og:url" content="http://yoursite.com/2019/08/24/吴恩达机器学习（Machine Learning）课程总结笔记---Week9/index.html">
 <meta property="og:site_name" content="Susan-L&#39;s Blog">
-<meta property="og:description" content="You will never fail until you give up!">
+<meta property="og:description" content="概述&amp;emsp;&amp;emsp;我们前边几章学习的基本上都属于机器学习算法范畴，本章将就两个机器学习应用实例来进行学习：异常检测和推荐系统。&amp;emsp;&amp;emsp;二者都是机器学习的典型应用，让我们开始吧！ 课程大纲  课程内容异常检测什么是异常检测&amp;emsp;&amp;emsp;异常检测是机器学习算法的一个常见应用。这种算法的一个有趣之处在于：它虽然主要用于非监督学习问题，但从某些角度看，它又类似于一些监督">
 <meta property="og:locale" content="en">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190709102722176.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190708083229622.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190708084718999.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NTRE5fU1VTQU4=,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190708085909657.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NTRE5fU1VTQU4=,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190708090024272.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190708090034888.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NTRE5fU1VTQU4=,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190708091546295.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NTRE5fU1VTQU4=,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190708091603410.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NTRE5fU1VTQU4=,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190708180418334.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NTRE5fU1VTQU4=,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/2019070818094939.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NTRE5fU1VTQU4=,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190708181020522.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NTRE5fU1VTQU4=,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190708181029596.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NTRE5fU1VTQU4=,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190708181151278.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NTRE5fU1VTQU4=,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190708182350779.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190708184136618.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NTRE5fU1VTQU4=,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190708211903268.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NTRE5fU1VTQU4=,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/2019070822291127.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NTRE5fU1VTQU4=,size_16,color_FFFFFF,t_70">
+<meta property="og:updated_time" content="2019-08-24T07:00:57.406Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Susan-L&#39;s Blog">
-<meta name="twitter:description" content="You will never fail until you give up!">
+<meta name="twitter:title" content="夜的第九页">
+<meta name="twitter:description" content="概述&amp;emsp;&amp;emsp;我们前边几章学习的基本上都属于机器学习算法范畴，本章将就两个机器学习应用实例来进行学习：异常检测和推荐系统。&amp;emsp;&amp;emsp;二者都是机器学习的典型应用，让我们开始吧！ 课程大纲  课程内容异常检测什么是异常检测&amp;emsp;&amp;emsp;异常检测是机器学习算法的一个常见应用。这种算法的一个有趣之处在于：它虽然主要用于非监督学习问题，但从某些角度看，它又类似于一些监督">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20190709102722176.png">
 
 
 
@@ -118,13 +137,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/">
+  <link rel="canonical" href="http://yoursite.com/2019/08/24/吴恩达机器学习（Machine Learning）课程总结笔记---Week9/">
 
 
 
 
 
-  <title>Susan-L's Blog</title>
+  <title>夜的第九页 | Susan-L's Blog</title>
   
 
 
@@ -143,8 +162,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -279,9 +297,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -311,9 +329,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/08/24/吴恩达机器学习（Machine Learning）课程总结笔记---Week9/" itemprop="url">夜的第九页</a></h1>
+          <h1 class="post-title" itemprop="name headline">夜的第九页</h1>
         
 
         <div class="post-meta">
@@ -363,9 +379,7 @@
       
 
       
-        
-          
-            <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>&emsp;&emsp;我们前边几章学习的基本上都属于机器学习算法范畴，本章将就两个机器学习应用实例来进行学习：<strong>异常检测和推荐系统</strong>。<br>&emsp;&emsp;二者都是机器学习的典型应用，让我们开始吧！</p>
+        <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>&emsp;&emsp;我们前边几章学习的基本上都属于机器学习算法范畴，本章将就两个机器学习应用实例来进行学习：<strong>异常检测和推荐系统</strong>。<br>&emsp;&emsp;二者都是机器学习的典型应用，让我们开始吧！</p>
 <h1 id="课程大纲"><a href="#课程大纲" class="headerlink" title="课程大纲"></a>课程大纲</h1><!-- ![在这里插入图片描述](https://img-blog.csdnimg.cn/20190709102722176.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NTRE5fU1VTQU4=,size_16,color_FFFFFF,t_70) -->
 <p><img src="https://img-blog.csdnimg.cn/20190709102722176.png" width="400" align="center"></p>
 <h1 id="课程内容"><a href="#课程内容" class="headerlink" title="课程内容"></a>课程内容</h1><h2 id="异常检测"><a href="#异常检测" class="headerlink" title="异常检测"></a>异常检测</h2><h3 id="什么是异常检测"><a href="#什么是异常检测" class="headerlink" title="什么是异常检测"></a>什么是异常检测</h3><p>&emsp;&emsp;异常检测是机器学习算法的一个常见应用。这种算法的一个有趣之处在于：它虽然主要用于非监督学习问题，但从某些角度看，它又类似于一些监督学习问题。<br>&emsp;&emsp;比如，判断是一个飞机引擎出厂时候是否正常，异常检测问题就是：要知道这个新的飞机引擎$x_{test}$ 是否有某种异常，或者希望判断这个引擎是否需要进一步测试，希望知道新的数据$x_{test}$ 是不是异常的，即这个测试数据不属于该组数据的几率如何。<br><!-- 如下图所示：
@@ -526,8 +540,6 @@
 <h1 id="课后编程作业"><a href="#课后编程作业" class="headerlink" title="课后编程作业"></a>课后编程作业</h1><p>&emsp;&emsp;我将课后编程作业的参考答案上传到了github上，包括了octave版本和python版本，大家可参考使用。<br><a href="https://github.com/GH-SUSAN/Machine-Learning-MarkDown/tree/master/week9" target="_blank" rel="noopener">https://github.com/GH-SUSAN/Machine-Learning-MarkDown/tree/master/week9</a></p>
 <h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>&emsp;&emsp;本周学习了机器学习的两个重要应用，异常检测和推荐系统。推荐系统虽然学术上的关注比较少，但实际应用却很多，值得关注。</p>
 
-          
-        
       
     </div>
     
@@ -544,141 +556,28 @@
       
 
       
-
-      
-
       
       
-        <div class="post-eof"></div>
+
       
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/22/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Susan-L">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Susan-L's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/08/22/hello-world/" itemprop="url">致闫小闫</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-22T20:43:15+08:00">
-                2019-08-22
-              </time>
+              <a href="/2019/08/22/hello-world/" rel="next" title="致闫小闫">
+                <i class="fa fa-chevron-left"></i> 致闫小闫
+              </a>
             
+          </div>
 
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p>闫小闫是一个从来不听劝告的人，感冒了不睡，越晚越来精神</p>
-<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -688,162 +587,11 @@
   </article>
 
 
-    
-      
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/22/helloworl/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Susan-L">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Susan-L's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/08/22/helloworl/" itemprop="url">helloworl</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-22T07:07:51+08:00">
-                2019-08-22
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/ReactNative类别/" itemprop="url" rel="index">
-                    <span itemprop="name">ReactNative类别</span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端类别/" itemprop="url" rel="index">
-                    <span itemprop="name">前端类别</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
-          
-        
+    <div class="post-spread">
       
     </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
 
 
           </div>
@@ -851,6 +599,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -871,8 +623,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -932,6 +693,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#课程大纲"><span class="nav-number">2.</span> <span class="nav-text">课程大纲</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#课程内容"><span class="nav-number">3.</span> <span class="nav-text">课程内容</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#异常检测"><span class="nav-number">3.1.</span> <span class="nav-text">异常检测</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是异常检测"><span class="nav-number">3.1.1.</span> <span class="nav-text">什么是异常检测</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#高斯分布"><span class="nav-number">3.1.2.</span> <span class="nav-text">高斯分布</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#高斯分布算法"><span class="nav-number">3.1.3.</span> <span class="nav-text">高斯分布算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#评估系统"><span class="nav-number">3.1.4.</span> <span class="nav-text">评估系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#异常检测和监督学习对比"><span class="nav-number">3.1.5.</span> <span class="nav-text">异常检测和监督学习对比</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#特征选择"><span class="nav-number">3.1.6.</span> <span class="nav-text">特征选择</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多元高斯分布"><span class="nav-number">3.1.7.</span> <span class="nav-text">多元高斯分布</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#多元高斯分布模型"><span class="nav-number">3.1.7.1.</span> <span class="nav-text">多元高斯分布模型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#多元高斯分布的变化"><span class="nav-number">3.1.7.2.</span> <span class="nav-text">多元高斯分布的变化</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#改变-Sigma"><span class="nav-number">3.1.7.2.1.</span> <span class="nav-text">改变$\Sigma$</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#改变-mu"><span class="nav-number">3.1.7.2.2.</span> <span class="nav-text">改变$\mu$</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#算法流程"><span class="nav-number">3.1.7.3.</span> <span class="nav-text">算法流程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#多元高斯分布模型与一般高斯分布模型的差异"><span class="nav-number">3.1.7.4.</span> <span class="nav-text">多元高斯分布模型与一般高斯分布模型的差异</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#模型定义"><span class="nav-number">3.1.7.4.1.</span> <span class="nav-text">模型定义</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#对比"><span class="nav-number">3.1.7.4.2.</span> <span class="nav-text">对比</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#推荐系统"><span class="nav-number">3.2.</span> <span class="nav-text">推荐系统</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#假设函数和优化目标"><span class="nav-number">3.2.1.</span> <span class="nav-text">假设函数和优化目标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#协同过滤"><span class="nav-number">3.2.2.</span> <span class="nav-text">协同过滤</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#协同过滤优化目标"><span class="nav-number">3.2.2.1.</span> <span class="nav-text">协同过滤优化目标</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#算法流程-1"><span class="nav-number">3.2.2.2.</span> <span class="nav-text">算法流程</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#向量化：低秩矩阵分解"><span class="nav-number">3.2.3.</span> <span class="nav-text">向量化：低秩矩阵分解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#均值归一化"><span class="nav-number">3.2.4.</span> <span class="nav-text">均值归一化</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#为什么采用均值归一化"><span class="nav-number">3.2.4.1.</span> <span class="nav-text">为什么采用均值归一化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#均值归一化算法"><span class="nav-number">3.2.4.2.</span> <span class="nav-text">均值归一化算法</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#课后编程作业"><span class="nav-number">4.</span> <span class="nav-text">课后编程作业</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">5.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1065,6 +842,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
