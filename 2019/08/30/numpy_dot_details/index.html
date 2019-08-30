@@ -79,16 +79,17 @@
 
 
 
-<meta name="description" content="You will never fail until you give up!">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Susan-L&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/tags/Android/index.html">
+<meta name="description" content="&amp;emsp;&amp;emsp;用numpy编程实现LinearRegression和LogisticRegression算法时，常用到dot方法计算cost函数和gradient，所以对dot需要准确的认识，才能够保证计算过程不出问题。&amp;emsp;&amp;emsp;numpy的dot方法，并不是传统意义上的点积或者说不仅仅是点积，如果你学过matlab，你会发现numpy的dot和matlab也有区别。因此，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="numpy dot 详解">
+<meta property="og:url" content="http://yoursite.com/2019/08/30/numpy_dot_details/index.html">
 <meta property="og:site_name" content="Susan-L&#39;s Blog">
-<meta property="og:description" content="You will never fail until you give up!">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;用numpy编程实现LinearRegression和LogisticRegression算法时，常用到dot方法计算cost函数和gradient，所以对dot需要准确的认识，才能够保证计算过程不出问题。&amp;emsp;&amp;emsp;numpy的dot方法，并不是传统意义上的点积或者说不仅仅是点积，如果你学过matlab，你会发现numpy的dot和matlab也有区别。因此，">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-08-30T06:56:41.404Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Susan-L&#39;s Blog">
-<meta name="twitter:description" content="You will never fail until you give up!">
+<meta name="twitter:title" content="numpy dot 详解">
+<meta name="twitter:description" content="&amp;emsp;&amp;emsp;用numpy编程实现LinearRegression和LogisticRegression算法时，常用到dot方法计算cost函数和gradient，所以对dot需要准确的认识，才能够保证计算过程不出问题。&amp;emsp;&amp;emsp;numpy的dot方法，并不是传统意义上的点积或者说不仅仅是点积，如果你学过matlab，你会发现numpy的dot和matlab也有区别。因此，">
 
 
 
@@ -118,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/Android/">
+  <link rel="canonical" href="http://yoursite.com/2019/08/30/numpy_dot_details/">
 
 
 
 
 
-  <title>Tag: Android | Susan-L's Blog</title>
+  <title>numpy dot 详解 | Susan-L's Blog</title>
   
 
 
@@ -143,7 +144,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -279,52 +280,160 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>Android<small>Tag</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/30/numpy_dot_details/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Susan-L">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Susan-L's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2019/08/22/helloworl/" itemprop="url">
-              
-                <span itemprop="name">helloworl</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">numpy dot 详解</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-08-22T07:07:51+08:00" content="2019-08-22">
-          08-22
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-30T10:21:12+08:00">
+                2019-08-30
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>&emsp;&emsp;用numpy编程实现LinearRegression和LogisticRegression算法时，常用到dot方法计算cost函数和gradient，所以对dot需要准确的认识，才能够保证计算过程不出问题。<br>&emsp;&emsp;numpy的dot方法，并不是传统意义上的点积或者说不仅仅是点积，如果你学过matlab，你会发现numpy的dot和matlab也有区别。因此，为了避免混淆这里给出numpy的dot方法常用计算和意义分析，帮助理解记忆。</p>
+<h1 id="numpy的向量和矩阵表示"><a href="#numpy的向量和矩阵表示" class="headerlink" title="numpy的向量和矩阵表示"></a>numpy的向量和矩阵表示</h1><p>&emsp;&emsp;numpy在向量和矩阵表示上做的不好，不如Matlab明确。<br>&emsp;&emsp;numpy的一维向量，其本质是一维数组，numpy默认将其作为行向量处理。<br>&emsp;&emsp;要表示列向量，可通过reshape转换得到，本质上是一个二维数组，numpy把他当作一个矩阵处理。<br>如下所示：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; a = np.array([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>])</span><br><span class="line">&gt;&gt; a</span><br><span class="line">   array([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>])</span><br><span class="line">&gt;&gt; a.shape</span><br><span class="line">   (<span class="number">3</span>,) <span class="comment">### 3表示向量三个元素</span></span><br><span class="line">&gt;&gt; a.T</span><br><span class="line">   array([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>])  <span class="comment">### 转置后依然是行向量</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&gt;&gt; b = a.reshape(<span class="number">-1</span>,  <span class="number">1</span>)</span><br><span class="line">&gt;&gt; b</span><br><span class="line">   array([[<span class="number">1</span>],</span><br><span class="line">          [<span class="number">2</span>],</span><br><span class="line">          [<span class="number">3</span>]])   <span class="comment">### 这种方式得到的列向量，其实已经是二维的矩阵，所以不能叫做1维的向量</span></span><br><span class="line">&gt;&gt; b.shape</span><br><span class="line">   (<span class="number">3</span>, <span class="number">1</span>) </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&gt;&gt; c = b.T</span><br><span class="line">&gt;&gt; c</span><br><span class="line">   array([[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]])  <span class="comment">### 列向量转置得到了行向量，本质上是二维的矩阵</span></span><br><span class="line">&gt;&gt; c.shape</span><br><span class="line">   (<span class="number">1</span>, <span class="number">3</span>)</span><br></pre></td></tr></table></figure></p>
+<h1 id="一维和一维数组的dot"><a href="#一维和一维数组的dot" class="headerlink" title="一维和一维数组的dot"></a>一维和一维数组的dot</h1><ol>
+<li><p>行向量和行向量的点积</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; vec1 = np.array([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>])</span><br><span class="line">&gt;&gt; vec2 = np.array([<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>])</span><br><span class="line">&gt;&gt; vec1.dot(vec2)</span><br><span class="line">   <span class="number">6</span>  <span class="comment">### 得到结果是一个标量，符合线性代数的向量点积定义</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>行向量和列向量点积</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; vec1 = np.array([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>])</span><br><span class="line">&gt;&gt; vec2 = np.array([<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>]).reshape(<span class="number">-1</span>, <span class="number">1</span>)</span><br><span class="line">&gt;&gt; vec1.dot(vec2)</span><br><span class="line">   array([<span class="number">6</span>])   <span class="comment">### 得到结果是一维数组(行向量)，不再是标量，说明这个dot不再是线性代数意义上的点积，而是矩阵乘法</span></span><br><span class="line">&gt;&gt; vec2.dot(vec1)</span><br><span class="line">   ValueError: shapes (<span class="number">3</span>,<span class="number">1</span>) <span class="keyword">and</span> (<span class="number">3</span>,) <span class="keyword">not</span> aligned: <span class="number">1</span> (dim <span class="number">1</span>) != <span class="number">3</span> (dim <span class="number">0</span>) <span class="comment">###果然报错了，因为矩阵乘法必须保证维度相容vec2 (3,1) 无法和vec1 (3,)相乘</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>综上，在numpy计算中，只有一维数组dot一维数组才符合数学定义，满足线性代数的向量点积。</p>
+<h1 id="一维数组和二维矩阵的dot"><a href="#一维数组和二维矩阵的dot" class="headerlink" title="一维数组和二维矩阵的dot"></a>一维数组和二维矩阵的dot</h1><p>行向量/列向量和矩阵dot，代码如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; vec1 = np.array([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>])</span><br><span class="line">&gt;&gt; vec1</span><br><span class="line">   array([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>])</span><br><span class="line"></span><br><span class="line">&gt;&gt; vec2 = vec1.reshape(<span class="number">-1</span>, <span class="number">1</span>)</span><br><span class="line">&gt;&gt; vec2</span><br><span class="line">   array([[<span class="number">1</span>],</span><br><span class="line">          [<span class="number">2</span>],</span><br><span class="line">       	  [<span class="number">3</span>]])</span><br><span class="line"></span><br><span class="line">&gt;&gt; mat1 = np.array([[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>],[<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>]])</span><br><span class="line">&gt;&gt; mat1</span><br><span class="line">   array([[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>],</span><br><span class="line">          [<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>]]) <span class="comment">### （2，3）矩阵</span></span><br><span class="line"></span><br><span class="line">&gt;&gt; mat1.dot(vec1)</span><br><span class="line">   array([<span class="number">14</span>,  <span class="number">6</span>])  <span class="comment">### (2,3)矩阵dot行向量，得到了一维行向量, 相当于(2,3) * (3,) = (2,) </span></span><br><span class="line"></span><br><span class="line">&gt;&gt; mat1.dot(vec2)</span><br><span class="line">   array([[<span class="number">14</span>],</span><br><span class="line">          [ <span class="number">6</span>]])   <span class="comment">### (2,3)矩阵dot列向量，得到了二维列向量，相当于(2,3) * (3,1) = (2,1) </span></span><br><span class="line"></span><br><span class="line">&gt;&gt; vec1.dot(mat1) </span><br><span class="line">   ValueError: shapes (<span class="number">3</span>,) <span class="keyword">and</span> (<span class="number">2</span>,<span class="number">3</span>) <span class="keyword">not</span> aligned: <span class="number">3</span> (dim <span class="number">0</span>) != <span class="number">2</span> (dim <span class="number">0</span>) <span class="comment">### (3,)*(2,3)不符合维度相容，报错</span></span><br></pre></td></tr></table></figure></p>
+<p>综上，一维和二维进行np.dot相当于矩阵乘法，必须满足维度相容。</p>
+<h1 id="二维和二维矩阵的dot"><a href="#二维和二维矩阵的dot" class="headerlink" title="二维和二维矩阵的dot"></a>二维和二维矩阵的dot</h1><p>矩阵和矩阵的dot运算，代码如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; mat1 = np.array([[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>],[<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>]])</span><br><span class="line">&gt;&gt; mat1</span><br><span class="line">   array([[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>],</span><br><span class="line">          [<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>]]) <span class="comment">### （2，3）矩阵</span></span><br><span class="line"></span><br><span class="line">&gt;&gt; mat2 = np.array([[<span class="number">1</span>,<span class="number">0</span>],[<span class="number">1</span>,<span class="number">1</span>]])</span><br><span class="line">&gt;&gt; mat2</span><br><span class="line">   array([[<span class="number">1</span>, <span class="number">0</span>],</span><br><span class="line">          [<span class="number">1</span>, <span class="number">1</span>]])</span><br><span class="line"></span><br><span class="line">&gt;&gt; mat1.dot(mat2)</span><br><span class="line">   ValueError: shapes (<span class="number">2</span>,<span class="number">3</span>) <span class="keyword">and</span> (<span class="number">2</span>,<span class="number">2</span>) <span class="keyword">not</span> aligned: <span class="number">3</span> (dim <span class="number">1</span>) != <span class="number">2</span> (dim <span class="number">0</span>)  <span class="comment">### 报错，维度不相容</span></span><br><span class="line"></span><br><span class="line">&gt;&gt; mat1.T.dot(mat2)</span><br><span class="line">   array([[<span class="number">2</span>, <span class="number">1</span>],</span><br><span class="line">          [<span class="number">3</span>, <span class="number">1</span>],</span><br><span class="line">          [<span class="number">4</span>, <span class="number">1</span>]])  <span class="comment">### 本质上是矩阵相乘 (3,2) * (2,2) = (2,2)</span></span><br></pre></td></tr></table></figure></p>
+<p>综上，二维情况下，np.dot依然是矩阵乘法，必须满足维度相容。</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>&emsp;&emsp;np.dot的运算规则：</p>
+<ol>
+<li>只有一维数组(n,)之间的dot运算，是线性代数意义上的点积，计算结果维标量。</li>
+<li>一维和多维以及多维和多维数组的dot运算，按照矩阵乘法进行运算，必须符合维度相容原则，计算结果为数组。</li>
+</ol>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/08/24/吴恩达机器学习（Machine Learning）课程总结笔记---Week9/" rel="next" title="参考markdown文档编辑范本">
+                <i class="fa fa-chevron-left"></i> 参考markdown文档编辑范本
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -332,6 +441,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -352,8 +465,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -368,32 +490,14 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
             
 
             
-              
-              
-              <div class="site-state-item site-state-categories">
-                <a href="/categories/index.html">
-                  <span class="site-state-item-count">2</span>
-                  <span class="site-state-item-name">categories</span>
-                </a>
-              </div>
-            
 
-            
-              
-              
-              <div class="site-state-item site-state-tags">
-                <a href="/tags/index.html">
-                  <span class="site-state-item-count">2</span>
-                  <span class="site-state-item-name">tags</span>
-                </a>
-              </div>
             
 
           </nav>
@@ -413,6 +517,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#numpy的向量和矩阵表示"><span class="nav-number">1.</span> <span class="nav-text">numpy的向量和矩阵表示</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#一维和一维数组的dot"><span class="nav-number">2.</span> <span class="nav-text">一维和一维数组的dot</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#一维数组和二维矩阵的dot"><span class="nav-number">3.</span> <span class="nav-text">一维数组和二维矩阵的dot</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二维和二维矩阵的dot"><span class="nav-number">4.</span> <span class="nav-text">二维和二维矩阵的dot</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">5.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -546,6 +666,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
